@@ -41,6 +41,35 @@
     <td mat-cell *matCellDef="let persona"> {{persona.fecha_registro | date: 'dd/mm/yyyy'}} </td>
   </ng-container>
 
+  <!-- Detalle Column -->
+  <ng-container matColumnDef="ver_detalle">
+  <th mat-header-cell *matHeaderCellDef>Detalle</th>
+  <td mat-cell *matCellDef="let persona">
+    <button mat-button (click)="irAlDetalle(persona.id)">
+      <mat-icon>visibility</mat-icon>
+    </button>
+  </td>
+
+  <!-- Eliminar Column-->
+  <ng-container matColumnDef="eliminar">
+    <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+    <td mat-cell *matCellDef="let persona">
+      <button mat-button (click)="eliminarAlumno(persona)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </td>
+  
+  <!-- Editar Column -->
+  </ng-container>
+  <ng-container matColumnDef="editar">
+    <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <td mat-cell *matCellDef="let persona">
+      <button mat-icon-button (click)="editarAlumno(persona)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+

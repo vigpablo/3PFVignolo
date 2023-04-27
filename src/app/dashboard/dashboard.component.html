@@ -1,11 +1,13 @@
 <mat-drawer-container class="example-container" autosize>
 
     <!-- SIDEBAR -->
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+  <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
+    <mat-nav-list>
+      <a [routerLink]="link.path" mat-list-item *ngFor="let link of links">
+        <mat-icon *ngIf="link.icon">{{link.icon}}</mat-icon>{{ link.title }}</a>
+      <a (click)="logout()" mat-list-item>Cerrar sesión</a>
+    </mat-nav-list>
+    
   </mat-drawer>
 
   <!-- WRAPPER -->
@@ -26,7 +28,8 @@
 
     <!-- PAGINAS -->
     <main>
-        <app-tablas></app-tablas>
+        <!-- <app-tablas></app-tablas> -->
+        <router-outlet></router-outlet>
     </main>
   </div>
 
