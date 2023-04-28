@@ -53,6 +53,28 @@ export class CursosService {
 
     return this.cursos$.asObservable();
   }
+
+  editarCurso(cursoId: number, actualizacion: Partial<Curso>): Observable<Curso[]> {
+    this.cursos$.pipe(take(1)).subscribe({
+      next: (cursos) => {
+        const cursosActualizados = cursos.map ((curso) => {
+          if (curso.id === cursoId) {
+            return {
+              ...curso, 
+              ...actualizacion,
+            }
+          } else {
+            return curso;
+          }
+        })
+
+        this.cursos$.next(cursosActualizados);
+        },
+      })
+
+      return this.cursos$.asObservable();
+    }
+
   }
 
 

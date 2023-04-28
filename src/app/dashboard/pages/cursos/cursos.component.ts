@@ -34,9 +34,22 @@ export class CursosComponent implements OnInit {
       this.cursosService.crearCurso(formvalue);
       }
     }); 
+}
 
+editarCurso(curso: Curso): void {
+  const dialog = this.dialog.open(AbmCursosComponent, {
+    data: {
+      curso,
+    }
+  })
 
-  }
+  dialog.afterClosed()
+  .subscribe((formvalue) => {
+    if (formvalue) {
+      this.cursosService.editarCurso(curso.id, formvalue)
+    }
+  })
+}
 
   aplicarFiltros(ev: Event): void {
 
@@ -49,10 +62,5 @@ export class CursosComponent implements OnInit {
   eliminarCurso(curso: Curso): void {
 
   }
-
-  editarCurso(curso: Curso): void {
-
-  }
-
   
 }
