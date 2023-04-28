@@ -7,12 +7,19 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { AbmCursosComponent } from './components/abm-cursos/abm-cursos.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PipesModule } from 'src/app/shared/pipes/pipes.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
 @NgModule({
   declarations: [
-    CursosComponent
+    CursosComponent,
+    AbmCursosComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +28,12 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     MatTableModule,
     MatButtonModule,
-
+    ReactiveFormsModule,
+    MatDialogModule,
+    PipesModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    
   ]
 })
 export class CursosModule { }

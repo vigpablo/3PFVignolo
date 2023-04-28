@@ -1,4 +1,9 @@
-
+<div class="boton-agregar">
+  <button (click)="abrirABMCursos()" color="primary" mat-flat-button>
+    <mat-icon>add</mat-icon>
+    Agregar curso
+  </button>
+  </div>
     <mat-form-field class="filter">
       <mat-label>Filter</mat-label>
       <input matInput (keyup)="aplicarFiltros($event)" placeholder="Ex. ium" #input>
