@@ -51,6 +51,10 @@ editarCurso(curso: Curso): void {
   })
 }
 
+eliminarCurso(curso: Curso): void {
+  this.cursosService.eliminarCurso(curso.id);
+}
+
   aplicarFiltros(ev: Event): void {
 
   }
@@ -59,8 +63,6 @@ editarCurso(curso: Curso): void {
 
   }
 
-  eliminarCurso(curso: Curso): void {
-
-  }
+  
   
 }
