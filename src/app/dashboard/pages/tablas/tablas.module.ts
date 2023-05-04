@@ -12,6 +12,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 import { DetalleAlumnosComponent } from './detalle-alumnos/detalle-alumnos.component';
+import { RouterModule } from '@angular/router';
+import { TablasRoutingModule } from './tablas-routing.module';
 
 
 
@@ -33,7 +35,17 @@ import { DetalleAlumnosComponent } from './detalle-alumnos/detalle-alumnos.compo
     ReactiveFormsModule,
     PipesModule,
     DirectivesModule,
-    
+    //TablasRoutingModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: TablasComponent
+      },
+      {
+        path: ':id',
+        component: DetalleAlumnosComponent,
+      },
+    ]),
   ],
   exports: [
     TablasComponent,

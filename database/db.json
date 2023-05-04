@@ -1,0 +1,43 @@
+{
+    "usuarios": [
+      {
+        "id": 1,
+        "nombre": "Camila",
+        "apellido": "Perez",
+        "email": "cami@mail.com",
+        "password": "123456",
+        "token": "ljljljljljljñ",
+        "role": "admin"
+      },
+      {
+        "nombre": "Fabian",
+        "apellido": "Sanchez",
+        "email": "fabi@email.com",
+        "password": "123456",
+        "token": "asdfasdfafasdf",
+        "role": "user",
+        "id": 4
+      }
+    ],
+    "cursos": [
+      {
+        "id": 1,
+        "nombre": "Javascript",
+        "fecha_fin": "2023-04-27T01:27:59.631Z",
+        "fecha_inicio": "2023-04-27T01:27:59.631Z"
+      },
+      {
+        "id": 2,
+        "nombre": "Backend",
+        "fecha_fin": "2023-04-27T01:27:59.631Z",
+        "fecha_inicio": "2023-04-27T01:27:59.631Z"
+      },
+      {
+        "id": 3,
+        "nombre": "UX/UI",
+        "fecha_fin": "2023-04-27T01:27:59.631Z",
+        "fecha_inicio": "2023-04-27T01:27:59.631Z"
+      }
+    ]
+  }
+  

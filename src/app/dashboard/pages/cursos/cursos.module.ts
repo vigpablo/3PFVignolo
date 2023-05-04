@@ -33,6 +33,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     PipesModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    RouterModule.forChild([
+      {
+        // /dashboard/cursos
+        path: '',
+        component: CursosComponent
+      }
+    ])
     
   ]
 })

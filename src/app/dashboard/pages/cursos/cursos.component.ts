@@ -52,6 +52,7 @@ editarCurso(curso: Curso): void {
 }
 
 eliminarCurso(curso: Curso): void {
+  if (confirm('Está seguro que desea elimar el curso?'))
   this.cursosService.eliminarCurso(curso.id);
 }
 

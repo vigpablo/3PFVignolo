@@ -10,6 +10,9 @@ import { DirectivesModule } from '../shared/directives/directives.module';
 import { CursosModule } from './pages/cursos/cursos.module';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list'; 
+import { TablasComponent } from './pages/tablas/tablas.component';
+import { DetalleAlumnosComponent } from './pages/tablas/detalle-alumnos/detalle-alumnos.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,23 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    TablasModule,
+    //TablasModule,
     DirectivesModule,
-    CursosModule,
-    RouterModule,
-    MatListModule
+    //CursosModule,
+    MatListModule,
+    RouterModule.forChild([
+      {
+        // http://localhost:XXXX/dashboard/estudiantes
+        path: 'estudiantes',
+        loadChildren: () => import('./pages/tablas/tablas.module').then((m) => m.TablasModule)
+      },
+      {
+        path: 'cursos',
+        loadChildren: () => import('./pages/cursos/cursos.module').then((m) => m.CursosModule),
+      }
+    ])
+    
+    
   ],
   exports: [
     DashboardComponent

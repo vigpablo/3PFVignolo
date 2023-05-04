@@ -6,7 +6,10 @@ import { Estudiante } from '../tablas.component';
   providedIn: 'root'
 })
 export class AlumnosService {
+  // Subject
+  private estudiantes2$ = new Subject<Estudiante[]>();
 
+  // BehaviorSubject
   private estudiantes$ = new BehaviorSubject<Estudiante[]>([
     {
       id: 1,
