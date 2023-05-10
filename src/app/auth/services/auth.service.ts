@@ -22,7 +22,11 @@ export class AuthService {
   ) { }
 
   obtenerUsuarioAutenticado(): Observable<Usuario | null> {
-    return this.authUser$.asObservable();
+    return this.authUser$.asObservable(); //hecho para el testing
+  }
+
+  establecerUsuarioAutenticado(usuario: Usuario): void {
+    this.authUser$.next(usuario);
   }
 
   login(formValue: LoginFormValue): void {
@@ -37,8 +41,9 @@ export class AuthService {
       next: (usuarios) => {
         const usuarioAutenticado = usuarios[0];
         if (usuarioAutenticado) {
-          localStorage.setItem('token', usuarioAutenticado.token)
-          this.authUser$.next(usuarioAutenticado);
+          localStorage.setItem('token', usuarioAutenticado.token);
+          this.establecerUsuarioAutenticado(usuarioAutenticado); // hecho para el testing
+          //Línea original: this.authUser$.next(usuarioAutenticado);
           this.router.navigate(['dashboard']);
         } else {
           alert('¡Usuario y contraseña incorrectos!')
